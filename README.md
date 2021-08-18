@@ -10,6 +10,8 @@ def funcao(x):
   return x**2 - 3
 ~~~
 
+Pode haver alguns problemas de identação, visto que não configurei para todas as funções possíveis.
+
 ## Execução
 Para executar o programa, considero que tenha instalado o python3 e o numpy. Dito isso, basta escolher o método e executar no terminal
 

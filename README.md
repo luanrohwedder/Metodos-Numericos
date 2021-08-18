@@ -13,6 +13,6 @@ def funcao(x):
 ##Execução
 Para executar o programa, considero que tenha instalado o python3 e o numpy. Dito isso, basta escolher o método e executar no terminal
 
-´´´
+```
 python3 <metodo_arquivo.py>
-´´´
+```

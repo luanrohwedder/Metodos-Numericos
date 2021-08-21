@@ -3,12 +3,12 @@ import numpy as np
 def funcao(x):
   return x**2-3
 
-def bissecao(a, b, ATOL):
+def bissecao(a, b, tolerancia):
     if(funcao(a)*funcao(b) > 0):
         print("Intervalo nao e valido!")
     else:
-        n = np.ceil(np.log2((a+b)/(2*ATOL)))
-        iteracoes = n        
+        n = np.ceil(np.log2((a+b)/(2*tolerancia)))
+        iteracoes.append(n)
         a_alg = a
         b_alg = b
 
@@ -37,7 +37,7 @@ def bissecao(a, b, ATOL):
         return p
 
 #Listas
-iteracoes = 0
+iteracoes = []
 raizes = []
 funcao_raizes = []
 funcao_a = []
@@ -58,25 +58,27 @@ print("\nInsira a aproximacao:")
 epsilon = float(input())
 
 res = bissecao(a, b, epsilon)
+round(res, 5)
 
 print()
 
-print('{:10}'.format(' n'), end='')
-print('{:10}'.format('a'), end='')
-print('{:10}'.format('b'), end='')
-print('{:8}'.format('x'), end='')
-print('{:10}'.format('f(a)'), end='')
-print('{:11}'.format('f(x)'), end='')
-print('{:10}'.format('f(b)'), end='')
+print('{:12}'.format(' n'), end='')
+print('{:12}'.format('a'), end='')
+print('{:12}'.format('b'), end='')
+print('{:10}'.format('x'), end='')
+print('{:12}'.format('f(a)'), end='')
+print('{:13}'.format('f(x)'), end='')
+print('{:12}'.format('f(b)'), end='')
 print('f(e)')
 
+for i in range(len(raizes)):
+    print('{:2}'.format(i+1), end='  |')    
+    print('{0:9}'.format(intervalo_a[i]), end='  |')    
+    print('{0:9}'.format(intervalo_b[i]), end='  |')
+    print('{:9}'.format(raizes[i]), end='  |')
+    print('{:9}'.format(funcao_a[i]), end='  |')
+    print('{:9}'.format(funcao_raizes[i]), end='  |')
+    print('{:9}'.format(funcao_b[i]), end='  |')
+    print('{:10}'.format(erro[i])) 
 
-for i in range(11):
-    print('{:2}'.format(i+1), end='')    
-    print('{0:10}'.format(intervalo_a[i]), end='')    
-    print('{0:10}'.format(intervalo_b[i]), end='')
-    print('{:10}'.format(raizes[i]), end='')
-    print('{:10}'.format(funcao_a[i]), end='')
-    print('{:10}'.format(funcao_raizes[i]), end='')
-    print('{:10}'.format(funcao_b[i]), end='')
-    print('{:10}'.format(erro[i]))    
+print(f"\n A raíz é: {res}")   

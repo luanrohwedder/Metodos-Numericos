@@ -27,4 +27,4 @@ python3 <metodo_arquivo.py>
 
 - [x] Método da Bissecção
 - [x] Método da Secante
-- [ ] Método de Newton
+- [x] Método de Newton

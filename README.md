@@ -26,5 +26,5 @@ python3 <metodo_arquivo.py>
 ## Andamento
 
 - [x] Método da Bissecção
-- [ ] Método da Secante
+- [x] Método da Secante
 - [ ] Método de Newton

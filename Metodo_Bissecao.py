@@ -34,7 +34,7 @@ def bissecao(a, b, tolerancia):
             intervalo_b.append(round(b_alg, 5))   
             intervalo_a.append(round(a_alg, 5))
             
-        return p
+        return round(p, 5)
 
 #Listas
 iteracoes = []
@@ -55,10 +55,9 @@ b = float(input())
 
 #Insercao da aproximacao
 print("\nInsira a aproximacao:")
-epsilon = float(input())
+tol = float(input())
 
-res = bissecao(a, b, epsilon)
-round(res, 5)
+res = bissecao(a, b, tol)
 
 print()
 

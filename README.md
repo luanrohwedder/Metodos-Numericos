@@ -15,7 +15,9 @@ Pode haver alguns problemas de identação, visto que não configurei para todas
 
 ## Execução
 
-Para executar o programa, considero que tenha instalado o python3 e o numpy. Dito isso, basta escolher o método e executar no terminal
+Para executar o programa, considero que tenha instalado o python3 e o numpy. Dito isso, basta escolher o método e executar no terminal.
+
+Recomendo maximizar a janela do terminal.
 
 ```
 python3 <metodo_arquivo.py>
@@ -24,5 +26,5 @@ python3 <metodo_arquivo.py>
 ## Andamento
 
 - [x] Método da Bissecção
-- [ ] Método da Secante
+- [x] Método da Secante
 - [ ] Método de Newton

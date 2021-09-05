@@ -1,13 +1,16 @@
 import numpy as np
 
 def funcao(x):
-  return x**2-3
+  return np.exp(-x) - np.log(x)
 
 def bissecao(a, b, tolerancia):
     if(funcao(a)*funcao(b) > 0):
         print("Intervalo nao e valido!")
-    else:
-        n = np.ceil(np.log2((a+b)/(2*tolerancia)))
+    else:        
+        n = np.ceil(np.log((b-a)/tolerancia)/np.log(2))
+        print()
+        print('Iterações: ' , end='')
+        print(n)
         iteracoes.append(n)
         a_alg = a
         b_alg = b
@@ -80,4 +83,4 @@ for i in range(len(raizes)):
     print('{:9}'.format(funcao_b[i]), end='  |')
     print('{:10}'.format(erro[i])) 
 
-print(f"\n A raíz é: {res}")   
+print(f"\n A raíz é: {res}") 

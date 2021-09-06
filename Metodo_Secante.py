@@ -1,12 +1,12 @@
 import numpy as np
 
 def funcao(x):
-  return x**2-3
+  return np.cos(x) - x
 
 def proximo_X(x_atual, x_ant):
     return x_atual - funcao(x_atual) * (x_atual - x_ant)/(funcao(x_atual) - funcao(x_ant))
 
-def secante(x0, x1, tolerancia):
+def secante(x0, x1, tolerancia, virgula):
     x0_alg = x0
     x1_alg = x1
 
@@ -18,15 +18,15 @@ def secante(x0, x1, tolerancia):
         erro = abs(x2_alg - x1_alg)
 
         #Adcionando na lista
-        xAtual.append(round(x1_alg, 5))
-        xProx.append(round(x2_alg, 5))
-        funcao_xAtual.append(round(fx1, 5))
-        funcao_xProx.append(round(fx2, 5))
-        erros.append(round(erro, 5))
+        xAtual.append(round(x1_alg, virgula))
+        xProx.append(round(x2_alg, virgula))
+        funcao_xAtual.append(round(fx1, virgula))
+        funcao_xProx.append(round(fx2, virgula))
+        erros.append(round(erro, virgula))
 
         #Verificação de raíz
         if(erro <= tolerancia):
-            return round(x2_alg, 5)
+            return round(x2_alg, virgula)
         
         x0_alg = x1_alg
         x1_alg = x2_alg
@@ -48,7 +48,10 @@ x1 = float(input())
 print("\nInsira a aproximacao:")
 tol = float(input())
 
-res = secante(x0, x1, tol)
+print("\nInsira quantas após a vírgula:")
+dot = int(input());
+
+res = secante(x0, x1, tol, dot)
 
 print()
 
